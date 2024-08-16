@@ -4,26 +4,25 @@ body {
     background-color: black;
     color: white;
     border-radius: 10px;
+    padding: 0 10px; /* Para evitar que o conteúdo encoste nas bordas da tela */
 }
-
 
 header {
     display: flex;
     font-size: 2.5rem;
     justify-content: center;
-    padding : 5px 20px;
+    padding: 5px 20px;
     border: 2px solid white;
     border-radius: 15px;
     background-color: #E50914;
-    width: 700px;
-    margin: 0 auto;
+    max-width: 700px; /* Alterado para max-width */
+    margin: 20px auto; /* Margin ajustado para um espaçamento superior */
     text-align: center;
 }
+
 h1 {
     margin: 0;
 }
-
-
 
 .movie-list {
     list-style-type: none;
@@ -31,102 +30,108 @@ h1 {
 }
 
 .botao {
-    
-        background-color: #000000; 
-        color: #FFFFFF;
-        border: none; 
-        border-radius: 20px; 
-        padding: 10px 20px; 
-        font-size: 24px;        
-        text-align: center; 
-    
+    background-color: #000000; 
+    color: #FFFFFF;
+    border: none; 
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    font-size: 24px;        
+    text-align: center;
+    cursor: pointer; /* Adicionado para indicar que é clicável */
+    transition: background-color 0.3s ease; /* Para um efeito suave ao passar o mouse */
+}
+
+.botao:hover {
+    background-color: #333333; /* Cor alterada ao passar o mouse */
 }
 
 .movie-item {
-
     margin: 10px 0;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 20px;
     background: #E50914;
     padding: 20px;
     border: 2px solid white;
     border-radius: 15px;
 }
+
 .movie-item2 {
-
     margin: 10px 0;
-    height: 70%;
-    width: 29%;
+    width: 100%;
+    max-width: 29%; /* Máximo de 29% da largura */
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 20px;
     background: #E50914;
     padding: 20px;
     border: 2px solid white;
     border-radius: 15px;
-    align-items:center;
+    align-items: center;
 }
 
-
-.movie-item h2 {
+.movie-item h2, .movie-item2 h2 {
     margin-top: 0;
     text-align: center;
 }
-.movie-item2 h2 {
-    margin-top: 0;
-    text-align: center;
-}
-
 
 .movie-item p {
     margin: 5px 0 0;
 }
 
-
-.imagem-filme {
-    margin-right: 30px;
-    width: 450px;
+.imagem-filme, .imagem-filme2, .imageminicial {
+    width: 100%;
     height: auto;
-    border-radius: 10px; 
-    padding: 30;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-}
-.imagem-filme2 {
-    margin-right: 30px;
-    width: auto;
-    height: 450px;
-    border-radius: 10px; 
-    padding: 30;
+    border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 div {
-    display: flex ;
+    display: flex;
+    flex-wrap: wrap; /* Adicionado para melhor ajuste de layout em telas menores */
+    justify-content: center; /* Centraliza o conteúdo */
 }
 
 .icones {
     width: 70px;
-    display: flex ;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
+
 .textogrande {
-font-size:  20px;
-font-weight: 500 ;
-
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.painel{
+.painel {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Flexível para adaptação */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza o painel */
 }
-.imageminicial{
-    margin-right: 30px;
-    width: 450px;
-    height: 280px;
-    border-radius: 10px; 
-    padding: 30;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 
+@media (max-width: 768px) {
+    header {
+        font-size: 2rem;
+        padding: 10px;
+        max-width: 100%; /* Ajusta o header para 100% da largura */
+    }
 
+    .movie-item2 {
+        max-width: 45%; /* Altera o tamanho dos itens em telas médias */
+    }
+
+    .imageminicial {
+        width: 100%; /* Ajusta a imagem para 100% da largura disponível */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-item2 {
+        max-width: 100%; /* Itens ocupam toda a largura disponível em telas pequenas */
+    }
+
+    .botao {
+        font-size: 18px; /* Fonte menor para botões em telas pequenas */
+        padding: 8px 16px; /* Padding ajustado */
+    }
 }
