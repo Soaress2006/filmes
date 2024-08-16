@@ -135,3 +135,31 @@ div {
         padding: 8px 16px; /* Padding ajustado */
     }
 }
+.movie-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.movie-content img {
+    flex: 1 1 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+.movie-content p {
+    flex: 2 1 100%;
+}
+
+@media (max-width: 768px) {
+    .movie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .movie-content img {
+        margin: 0 auto;
+    }
+}
+
